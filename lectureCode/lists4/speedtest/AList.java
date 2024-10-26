@@ -22,17 +22,19 @@ public class AList {
         size = 0;
     }
 
-    /** Resizes the underlying array to the target capacity */
-    public void resize(int capacity){
+    /** Resizes the underlying array to the target capacity. */
+    private void resize(int capacity) {
         int[] a = new int[capacity];
         System.arraycopy(items, 0, a, 0, size);
         items = a;
     }
-    /** Inserts X into the back of the list and resize array. */
+
+    /** Inserts X into the back of the list. */
     public void addLast(int x) {
-        if(size == items.length){
-            resize(size+1);
+        if (size == items.length) {
+            resize((int) (size + 1));
         }
+
         items[size] = x;
         size = size + 1;
     }
