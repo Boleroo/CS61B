@@ -44,17 +44,28 @@ public class SLList {
 
     /** A helper method. */
     private static IntNode reverse(IntNode first){
-        if(first.next == null){
+//        if(first.next == null){
+//            return first;
+//        }
+//        IntNode newNode = reverse(first.next);
+//        first.next = null;
+//        IntNode cur = newNode;
+//        while(cur.next != null){
+//            cur = cur.next;
+//        }
+//        cur.next = first;
+//        return newNode;
+
+        /** A better recusive helper: */
+        if(first == null || first.next == null){
             return first;
         }
-        IntNode newNode = reverse(first.next);
-        first.next = null;
-        IntNode cur = newNode;
-        while(cur.next != null){
-            cur = cur.next;
+        else{
+            IntNode reserved = reverse(first.next);
+            first.next.next = first;
+            first.next = null;
+            return reserved;
         }
-        cur.next = first;
-        return newNode;
     }
 
     /** Recursively reverse the existing SLList. */
