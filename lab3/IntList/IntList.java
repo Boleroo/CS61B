@@ -11,11 +11,11 @@ public class IntList {
     /**
      * First element of list.
      */
-    public int first;
+    private int first;
     /**
      * Remaining elements of list.
      */
-    public IntList rest;
+    private IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
@@ -29,7 +29,7 @@ public class IntList {
      * A List with null rest, and first = 0.
      */
     public IntList() {
-    /* NOTE: public IntList () { }  would also work. */
+        /* NOTE: public IntList () { }  would also work. */
         this(0, null);
     }
 
@@ -81,12 +81,11 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        if(A ==null){
+        if (A == null) {
             return B;
         }
         IntList tmp = A;
-        while(tmp.rest != null){
+        while (tmp.rest != null) {
             tmp = tmp.rest;
         }
         tmp.rest = B;
@@ -98,19 +97,18 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        if(A == null){
+        if (A == null) {
             return B;
         }
         IntList L = new IntList(A.first, null);
         IntList lp = L;
         A = A.rest;
-        while(A != null){
+        while (A != null) {
             lp.rest = new IntList(A.first, null);
             lp = lp.rest;
             A = A.rest;
         }
-        while(B != null){
+        while (B != null) {
             lp.rest = new IntList(B.first, null);
             lp = lp.rest;
             B = B.rest;
@@ -118,11 +116,11 @@ public class IntList {
         return L;
     }
 
-    public static IntList reverse(IntList L){
-        if(L == null){
+    public static IntList reverse(IntList L) {
+        if (L == null) {
             return null;
         }
-        if(L.rest == null){
+        if (L.rest == null) {
             return L;
         }
         IntList nxt = reverse(L.rest);
