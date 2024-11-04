@@ -9,9 +9,14 @@ public class LinkedListDeque<T> {
         }
     }
 
-    int size = 0;
+    int size;
     Node<T> sentinel;
 
+    /** Creates an empty deque. */
+    public LinkedListDeque(){
+        sentinel = null;
+        size = 0;
+    }
     /** Adds an item T to the front of the queue. */
     public void addFirst(T item){
         if(size == 0){
