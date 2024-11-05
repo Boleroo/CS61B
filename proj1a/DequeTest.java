@@ -17,6 +17,8 @@ public class DequeTest {
         dq.addLast(0);
         int res = dq.get(3);
         System.out.println(res);
+        int res1 = dq.getRecursive(3);
+        System.out.println(res1);
         dq.printDeque();
     }
 }
