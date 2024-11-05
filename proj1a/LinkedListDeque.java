@@ -117,4 +117,17 @@ public class LinkedListDeque<T> {
         }
         return cur.item;
     }
+
+    /** Get ith item, using recursion. */
+    public T getRecursive(int index){
+        return getRecursive(sentinel.next, index);
+    }
+
+    /** A helper method. */
+    private T getRecursive(Node<T> node, int index){
+        if(index == 0){
+            return node.item;
+        }
+        return getRecursive(node.next, index-1);
+    }
 }
