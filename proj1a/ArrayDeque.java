@@ -23,7 +23,7 @@ public class ArrayDeque<T> {
         }
         this.array = newArray;
         nextFirst = newArray.length - 1;
-        nextLast = len - 1;
+        nextLast = len;
     }
 
     /** Add item to head of the array. */
@@ -33,6 +33,16 @@ public class ArrayDeque<T> {
         }
         array[nextFirst] = item;
         nextFirst = (array.length + nextFirst -1)%array.length;
+        size++;
+    }
+
+    /** Add item to back of the array. */
+    public void addLast(T item){
+        if(size == array.length){
+            resize(array);
+        }
+        array[nextLast] = item;
+        nextLast = (nextLast +1)%array.length;
         size++;
     }
 }
