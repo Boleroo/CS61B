@@ -65,6 +65,11 @@ public class LinkedListDeque<T> {
         return false;
     }
 
+    /** Get size of the list. */
+    public int size(){
+        return size;
+    }
+
     /** Print items, separated by a space. */
     public void printDeque(){
         Node<T> cur = sentinel.next;
