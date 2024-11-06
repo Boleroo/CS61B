@@ -1,9 +1,9 @@
 public class ArrayDeque<T> {
-    T[] array;
-    int size;
-    int nextFirst;
-    int nextLast;
-    final int usglen = 16;
+    private T[] array;
+    private int size;
+    private int nextFirst;
+    private int nextLast;
+    private final int usglen = 16;
     /** Create an empty array deque. */
     public ArrayDeque() {
         array = (T[]) new Object[3];

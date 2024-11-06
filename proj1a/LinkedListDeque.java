@@ -9,8 +9,8 @@ public class LinkedListDeque<T> {
         }
     }
 
-    int size;
-    Node<T> sentinel;
+    private int size;
+    private Node<T> sentinel;
 
     /** Creates an empty deque. */
     public LinkedListDeque() {
