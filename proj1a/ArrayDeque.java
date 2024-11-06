@@ -6,7 +6,7 @@ public class ArrayDeque<T> {
     private final int usglen = 16;
     /** Create an empty array deque. */
     public ArrayDeque() {
-        array = (T[]) new Object[3];
+        array = (T[]) new Object[8];
         size = 0;
         nextFirst = 0;
         nextLast = 1;
@@ -73,13 +73,13 @@ public class ArrayDeque<T> {
         }
         int len = array.length;
         int removeIndex = (nextFirst + 1) % len;
-        T res = array[removeIndex];
-        nextFirst = (nextFirst + 1) % len;
-        size--;
-        double usage = size / (double) len;
+        double usage = (size - 1) / (double) len;
         if (len >= usglen && usage < 0.25) {
             resize(array, len / 2);
         }
+        T res = array[removeIndex];
+        nextFirst = (nextFirst + 1) % len;
+        size--;
         return res;
     }
 
@@ -105,6 +105,6 @@ public class ArrayDeque<T> {
         if (index >= size) {
             return null;
         }
-        return array[nextFirst + index + 1];
+        return array[(nextFirst + index + 1) % array.length];
     }
 }
