@@ -28,7 +28,7 @@ public class ArrayDeque<T> {
     /** Add item to head of the array. */
     public void addFirst(T item) {
         if (size == array.length) {
-            resize(array, array.length * 2);
+            resize(array.length * 2);
         }
         array[nextFirst] = item;
         nextFirst = (array.length + nextFirst - 1) % array.length;
@@ -38,7 +38,7 @@ public class ArrayDeque<T> {
     /** Add item to back of the array. */
     public void addLast(T item) {
         if (size == array.length) {
-            resize(array, array.length * 2);
+            resize(array.length * 2);
         }
         array[nextLast] = item;
         nextLast = (nextLast + 1) % array.length;
@@ -76,7 +76,7 @@ public class ArrayDeque<T> {
         array[removeIndex] = null;
         double usage = (size - 1) / (double) len;
         if (len >= usglen && usage < 0.25) {
-            resize(array, len / 2);
+            resize(len / 2);
         }
         nextFirst = (nextFirst + 1) % len;
         size--;
@@ -96,7 +96,7 @@ public class ArrayDeque<T> {
         size--;
         double usage = size / (double) len;
         if (len >= usglen && usage < 0.25) {
-            resize(array, len / 2);
+            resize(len / 2);
         }
         return res;
     }
