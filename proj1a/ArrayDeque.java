@@ -74,6 +74,7 @@ public class ArrayDeque<T> {
         int len = array.length;
         int removeIndex = (nextFirst + 1) % len;
         T res = array[removeIndex];
+        array[removeIndex] = null;
         double usage = (size - 1) / (double) len;
         if (len >= usglen && usage < 0.25) {
             resize(array, len / 2);
@@ -91,6 +92,7 @@ public class ArrayDeque<T> {
         int len = array.length;
         int removeIndex = (nextLast - 1 + len) % len;
         T res = array[removeIndex];
+        array[removeIndex] = null;
         nextLast = (nextLast - 1 + len) % len;
         size--;
         double usage = size / (double) len;
