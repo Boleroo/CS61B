@@ -13,15 +13,14 @@ public class ArrayDeque<T> {
     }
 
     /** Resize method. */
-    private void resize(T[] oldArray, int newLen) {
+    private void resize(int newLen) {
         T[] newArray = (T[]) new Object[newLen];
-        int cur = nextFirst;
-        int len = oldArray.length;
+        int cur = (nextFirst + 1) % array.length;
         for (int i = 0; i < size; i++) {
-            cur = (cur + 1 + len) % len;
-            newArray[i] = oldArray[cur];
+            cur = (cur + 1) % array.length;
+            newArray[i] = array[cur];
         }
-        this.array = newArray;
+        array = newArray;
         nextFirst = newArray.length - 1;
         nextLast = size;
     }
