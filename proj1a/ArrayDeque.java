@@ -17,8 +17,8 @@ public class ArrayDeque<T> {
         T[] newArray = (T[]) new Object[newLen];
         int cur = (nextFirst + 1) % array.length;
         for (int i = 0; i < size; i++) {
-            cur = (cur + 1) % array.length;
             newArray[i] = array[cur];
+            cur = (cur + 1) % array.length;
         }
         array = newArray;
         nextFirst = newArray.length - 1;
