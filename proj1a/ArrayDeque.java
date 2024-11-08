@@ -74,12 +74,12 @@ public class ArrayDeque<T> {
         int removeIndex = (nextFirst + 1) % len;
         T res = array[removeIndex];
         array[removeIndex] = null;
-        double usage = (size - 1) / (double) len;
+        nextFirst = (nextFirst + 1) % len;
+        size--;
+        double usage = size / (double) len;
         if (len >= usglen && usage < 0.25) {
             resize(len / 2);
         }
-        nextFirst = (nextFirst + 1) % len;
-        size--;
         return res;
     }
 
