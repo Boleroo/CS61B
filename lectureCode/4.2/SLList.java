@@ -84,6 +84,7 @@ public class SLList<Blorp> implements List61B<Blorp> {
             p = p.next;
         }
         p.next = null;
+        size--;
         return back.item;
     }
 
