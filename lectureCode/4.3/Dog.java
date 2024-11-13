@@ -1,4 +1,5 @@
-public class Dog implements OurComparable{
+import java.util.Comparator;
+public class Dog implements Comparable<Dog> {
     public String name;
     public int age;
 
@@ -12,8 +13,18 @@ public class Dog implements OurComparable{
     }
 
     @Override
-    public int compareTo(Object o){
-        Dog d = (Dog) o;
-        return this.age - d.age;
+    public int compareTo(Dog o){
+        return this.age - o.age;
+    }
+
+    private static class NameComparator implements Comparator<Dog> {
+        @Override
+        public int compare(Dog a, Dog b) {
+            return a.name.compareTo(b.name);
+        }
+    }
+
+    public static Comparator<Dog> getNameComparator() {
+        return new NameComparator();
     }
 }
