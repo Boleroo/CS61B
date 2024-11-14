@@ -11,7 +11,7 @@ public class Palindrome {
         return dq;
     }
 
-    /** Check if the word is a palindrome. */
+    /** Check if the word is a palindrome. (Using interation) */
     public boolean isPalindrome(String word) {
         Deque<Character> dq = wordToDeque(word);
         if (dq.isEmpty() || dq.size() == 1) {
@@ -25,5 +25,22 @@ public class Palindrome {
             }
         }
         return true;
+    }
+
+    /** Check if the word is a palindrome. (Using recursion) */
+    public boolean isPalindromeRecursive(String word) {
+        Deque<Character> dq = wordToDeque(word);
+        return isPalindromeHepler(dq);
+    }
+
+    /** Helper method. */
+    private boolean isPalindromeHepler(Deque<Character> dq) {
+        if (dq.size() <= 1) {
+            return true;
+        } else if (dq.removeFirst() != dq.removeLast()){
+            return false;
+        } else {
+            return isPalindromeHepler(dq);
+        }
     }
 }
