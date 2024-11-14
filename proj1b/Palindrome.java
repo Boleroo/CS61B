@@ -13,6 +13,17 @@ public class Palindrome {
 
     /** Check if the word is a palindrome. */
     public boolean isPalindrome(String word) {
+        Deque<Character> dq = wordToDeque(word);
+        int size = dq.size();
+        int p = 0;
+        int q = size - 1;
+        while (p < q) {
+            if(dq.get(p) != dq.get(q)) {
+                return false;
+            }
+            p++;
+            q--;
+        }
         return true;
     }
 }
