@@ -14,15 +14,15 @@ public class Palindrome {
     /** Check if the word is a palindrome. */
     public boolean isPalindrome(String word) {
         Deque<Character> dq = wordToDeque(word);
-        int size = dq.size();
-        int p = 0;
-        int q = size - 1;
-        while (p < q) {
-            if(dq.get(p) != dq.get(q)) {
+        if (dq.isEmpty() || dq.size() == 1) {
+            return true;
+        }
+        while(dq.size() > 1) {
+            char first = dq.removeFirst();
+            char last = dq.removeLast();
+            if(first != last) {
                 return false;
             }
-            p++;
-            q--;
         }
         return true;
     }
