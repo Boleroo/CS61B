@@ -10,4 +10,9 @@ public class Palindrome {
         }
         return dq;
     }
+
+    /** Check if the word is a palindrome. */
+    public boolean isPalindrome(String word) {
+        return true;
+    }
 }
