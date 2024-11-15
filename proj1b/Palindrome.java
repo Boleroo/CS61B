@@ -4,7 +4,7 @@ public class Palindrome {
     /** Turn String into Deque. */
     public Deque<Character> wordToDeque(String word) {
         Deque<Character> dq = new LinkedListDeque<>();
-        for(int i = 0; i < word.length(); i++) {
+        for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             dq.addLast(c);
         }
@@ -17,10 +17,10 @@ public class Palindrome {
         if (dq.isEmpty() || dq.size() == 1) {
             return true;
         }
-        while(dq.size() > 1) {
+        while (dq.size() > 1) {
             char first = dq.removeFirst();
             char last = dq.removeLast();
-            if(first != last) {
+            if (first != last) {
                 return false;
             }
         }
@@ -37,7 +37,7 @@ public class Palindrome {
     private boolean isPalindromeHepler(Deque<Character> dq) {
         if (dq.size() <= 1) {
             return true;
-        } else if (dq.removeFirst() != dq.removeLast()){
+        } else if (dq.removeFirst() != dq.removeLast()) {
             return false;
         } else {
             return isPalindromeHepler(dq);
@@ -47,7 +47,7 @@ public class Palindrome {
     /** Overload isPalindrome moethod. */
     public boolean isPalindrome(String word, CharacterComparator cc) {
         Deque<Character> dq = wordToDeque(word);
-        while(dq.size() > 1) {
+        while (dq.size() > 1) {
             char first = dq.removeFirst();
             char last = dq.removeLast();
             if (!cc.equalChars(first, last)) {
