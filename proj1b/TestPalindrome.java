@@ -23,6 +23,8 @@ public class TestPalindrome {
 
         String oneLength = "a";
         assertTrue(palindrome.isPalindrome(oneLength));
+
+        assertFalse(palindrome.isPalindrome(null));
     }
 
 
@@ -69,6 +71,8 @@ public class TestPalindrome {
 
         String s2 = "";
         assertTrue(palindrome.isPalindrome(s2, offbyone));
+
+        assertFalse(palindrome.isPalindrome(null, offbyone));
     }
 
     @Test

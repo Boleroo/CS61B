@@ -11,6 +11,9 @@ public class Palindrome {
 
     /** Check if the word is a palindrome. (Using interation) */
     public boolean isPalindrome(String word) {
+        if (word == null) {
+            return false;
+        }
         Deque<Character> dq = wordToDeque(word);
         if (dq.isEmpty() || dq.size() == 1) {
             return true;
@@ -44,6 +47,9 @@ public class Palindrome {
 
     /** Overload isPalindrome moethod. */
     public boolean isPalindrome(String word, CharacterComparator cc) {
+        if (word == null || cc == null) {
+            return false;
+        }
         Deque<Character> dq = wordToDeque(word);
         while (dq.size() > 1) {
             char first = dq.removeFirst();
