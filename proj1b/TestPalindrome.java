@@ -17,16 +17,14 @@ public class TestPalindrome {
     }
 
     @Test
-    public void testIsPalindromeZeroLength() {
+    public void testIsPalindromeCorner() {
         String zeroLength = "";
         assertTrue(palindrome.isPalindromeRecursive(zeroLength));
-    }
 
-    @Test
-    public void testIsPalindromeOneLength() {
         String oneLength = "a";
         assertTrue(palindrome.isPalindromeRecursive(oneLength));
     }
+
 
     @Test
     public void testIsPalindromeEven() {
@@ -44,5 +42,32 @@ public class TestPalindrome {
     public void testIsPalindromeNot() {
         String s = "abcde";
         assertFalse(palindrome.isPalindromeRecursive(s));
+    }
+
+    @Test
+    /** Test code for the overloaded isPalindrome(offbyone) method. */
+    public void testIsPalindromeOne() {
+        /** Odd String. */
+        String s1 = "flake";
+        CharacterComparator offbyone = new OffByOne();
+        assertTrue(palindrome.isPalindrome(s1, offbyone));
+
+        /** Even String. */
+        String s2 = "adcb";
+        assertTrue(palindrome.isPalindrome(s2, offbyone));
+
+        String s3 = "c&ax%d";
+        assertFalse(palindrome.isPalindrome(s3, offbyone));
+    }
+
+    @Test
+    /** Corner Condition Test for the overloaded isPalindrome(offbyone) method. */
+    public void testIsPalindromeOneCorner() {
+        CharacterComparator offbyone = new OffByOne();
+        String s1 = "a";
+        assertTrue(palindrome.isPalindrome(s1, offbyone));
+
+        String s2 = "";
+        assertTrue(palindrome.isPalindrome(s2, offbyone));
     }
 }

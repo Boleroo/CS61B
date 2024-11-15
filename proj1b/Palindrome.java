@@ -44,7 +44,16 @@ public class Palindrome {
         }
     }
 
+    /** Overload isPalindrome moethod. */
     public boolean isPalindrome(String word, CharacterComparator cc) {
+        Deque<Character> dq = wordToDeque(word);
+        while(dq.size() > 1) {
+            char first = dq.removeFirst();
+            char last = dq.removeLast();
+            if (!cc.equalChars(first, last)) {
+                return false;
+            }
+        }
         return true;
     }
 }

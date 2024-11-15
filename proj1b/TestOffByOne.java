@@ -14,6 +14,7 @@ public class TestOffByOne {
         assertTrue(offByOne.equalChars('a', 'b'));
         assertTrue(offByOne.equalChars('b', 'a'));
         assertFalse(offByOne.equalChars('a', 'B'));
+        assertFalse(offByOne.equalChars('b', 'b'));
     }
 
     /** Test non-alphabetical characters. */
