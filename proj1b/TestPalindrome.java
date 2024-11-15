@@ -70,4 +70,26 @@ public class TestPalindrome {
         String s2 = "";
         assertTrue(palindrome.isPalindrome(s2, offbyone));
     }
+
+    @Test
+    /** Test isPalindrome(offByN). */
+    public void testIsPalindromeN() {
+        CharacterComparator offbyn = new OffByN(6);
+        String s1 = "abcihg";
+        assertTrue(palindrome.isPalindrome(s1, offbyn));
+        String s2 = "bugs";
+        assertFalse(palindrome.isPalindrome(s2, offbyn));
+        String s3 = "12587";
+        assertTrue(palindrome.isPalindrome(s3, offbyn));
+    }
+
+    @Test
+    /** Corner Condition test for isPalindrome(offByN). */
+    public void testIsPalindromeNCorner() {
+        CharacterComparator offbyn = new OffByN(6);
+        String s1 = "";
+        assertTrue(palindrome.isPalindrome(s1, offbyn));
+        String s2 = "1";
+        assertTrue(palindrome.isPalindrome(s2, offbyn));
+    }
 }
