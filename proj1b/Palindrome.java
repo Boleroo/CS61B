@@ -26,7 +26,7 @@ public class Palindrome {
     }
 
     /** Check if the word is a palindrome. (Using recursion) */
-    public boolean isPalindromeRecursive(String word) {
+    private boolean isPalindromeRecursive(String word) {
         Deque<Character> dq = wordToDeque(word);
         return isPalindromeHepler(dq);
     }

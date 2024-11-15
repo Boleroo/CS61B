@@ -19,29 +19,29 @@ public class TestPalindrome {
     @Test
     public void testIsPalindromeCorner() {
         String zeroLength = "";
-        assertTrue(palindrome.isPalindromeRecursive(zeroLength));
+        assertTrue(palindrome.isPalindrome(zeroLength));
 
         String oneLength = "a";
-        assertTrue(palindrome.isPalindromeRecursive(oneLength));
+        assertTrue(palindrome.isPalindrome(oneLength));
     }
 
 
     @Test
     public void testIsPalindromeEven() {
         String even = "aabbaa";
-        assertTrue(palindrome.isPalindromeRecursive(even));
+        assertTrue(palindrome.isPalindrome(even));
     }
 
     @Test
     public void testIsPalindromeOdd() {
         String odd = "aba";
-        assertTrue(palindrome.isPalindromeRecursive(odd));
+        assertTrue(palindrome.isPalindrome(odd));
     }
 
     @Test
     public void testIsPalindromeNot() {
         String s = "abcde";
-        assertFalse(palindrome.isPalindromeRecursive(s));
+        assertFalse(palindrome.isPalindrome(s));
     }
 
     @Test
