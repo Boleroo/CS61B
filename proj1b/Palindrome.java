@@ -43,4 +43,8 @@ public class Palindrome {
             return isPalindromeHepler(dq);
         }
     }
+
+    public boolean isPalindrome(String word, CharacterComparator cc) {
+        return true;
+    }
 }
