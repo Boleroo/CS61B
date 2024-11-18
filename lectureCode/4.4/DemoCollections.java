@@ -23,11 +23,30 @@ public class DemoCollections {
         return wordSet.size();
     }
 
+    /** Returns a map that tracks the count of target words list. */
+    public static Map<String, Integer> collectWordCount(List<String> words, List<String> targets) {
+        Map<String, Integer> counts = new HashMap<>();
+        for (String t: targets) {
+            counts.put(t, 0);
+        }
+        for (String s: words) {
+            if(counts.containsKey(s)) {
+                int oldCount = counts.get(s);
+                counts.put(s, oldCount + 1);
+            }
+        }
+        return counts;
+    }
     public static void main(String[] args) {
-        String filename = "./libraryOfBabylon";
+        String filename = "libraryOfBabylon.txt";
         List<String> words = getWords(filename);
         System.out.println(words);
         int count = countUniqueWords(words);
         System.out.println(count);
+        // Another way:
+        // Set<String> wordSet = new HashSet<>(wrods);
+
+        List<String> targets = getWords("target.txt");
+        System.out.println(collectWordCount(words, targets));
     }
 }
