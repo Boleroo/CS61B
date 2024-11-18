@@ -39,6 +39,5 @@ public class SLListVista {
         list.insertFront(2);
         list.insertFront(4);
         System.out.println(list.indexOf(2));
-        System.out.println(list.indexOf(3));
     }
 }

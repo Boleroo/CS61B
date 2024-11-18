@@ -2,7 +2,7 @@ public class DMSList {
     private IntNode sentinel;
 
     public DMSList() {
-        sentinel = new IntNode(-1000, new endNode(-1000, null));
+        sentinel = new IntNode(-1000, new endNode());
     }
 
     public class IntNode {
@@ -18,8 +18,8 @@ public class DMSList {
     }
 
     public class endNode extends IntNode {
-        public endNode(int i, IntNode h) {
-            super(i, h);
+        public endNode() {
+            super(0, null);
         }
         @Override
         public int max() {
