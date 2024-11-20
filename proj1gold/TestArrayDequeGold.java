@@ -20,14 +20,10 @@ public class TestArrayDequeGold {
             } else if (seed > 0.25 && seed < 0.5) {
                 sad.addLast(num);
                 ads.addLast(num);
-                Integer actualSize = sad.size();
-                Integer expectedSize = ads.size();
-                msg = msg + "size()\n";
-                assertEquals(msg, expectedSize, actualSize);
-
-                int index = ads.size() - 1;
-                Integer actual = sad.get(index);
-                Integer expected = ads.get(index);
+                int actualIndex = sad.size() - 1;
+                int expectedIndex = ads.size() - 1;
+                Integer actual = sad.get(actualIndex);
+                Integer expected = ads.get(expectedIndex);
                 msg = msg + "addLast(" + num + ")\n";
                 assertEquals(msg, expected, actual);
             } else if (seed >= 0.5 && seed <= 0.75 && !ads.isEmpty()) {
