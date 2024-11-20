@@ -1,0 +1,58 @@
+public class Quick {
+    public static void main(String[] args) {
+        StudentArrayDeque<Integer> sad = new StudentArrayDeque<>();
+//        ArrayDequeSolution<Integer> sad = new ArrayDequeSolution<>();
+        sad.addFirst(0);
+        sad.addFirst(0);
+        sad.addFirst(0);
+        sad.addFirst(1);
+        sad.removeLast();
+        sad.removeFirst();
+        sad.removeFirst();
+        sad.removeFirst();
+        sad.addLast(4);
+        sad.removeLast();
+        sad.addFirst(0);
+        sad.removeFirst();
+        sad.addFirst(0);
+        sad.addLast(2);
+        sad.removeLast();
+        sad.removeLast();
+        sad.addLast(4);
+        sad.removeLast();
+        sad.addFirst(1);
+        sad.removeLast();
+        sad.addLast(4);
+        sad.removeLast();
+        sad.addLast(4);
+        sad.removeLast();
+        sad.addLast(4);
+        sad.addFirst(0);
+        sad.addFirst(1);
+        sad.addLast(3);
+        sad.removeFirst();
+        sad.removeFirst();
+        sad.addFirst(1);
+        sad.addLast(4);
+        sad.removeLast();
+        sad.addFirst(1);
+        sad.removeLast();
+        sad.addLast(2);
+        sad.removeLast();
+        sad.addFirst(1);
+        sad.removeLast();
+        sad.addFirst(2);
+        sad.addLast(2);
+        sad.addFirst(1);
+        sad.removeLast();
+        sad.removeLast();
+        sad.addLast(4);
+        sad.removeLast();
+        sad.addFirst(0);
+        sad.addLast(2);
+        sad.addLast(3);
+        sad.removeFirst();
+        sad.addLast(4);
+        System.out.println(sad.get(sad.size() - 1));
+    }
+}
