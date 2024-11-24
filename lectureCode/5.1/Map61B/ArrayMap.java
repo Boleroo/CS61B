@@ -1,9 +1,12 @@
 package Map61B;
 
+import org.hamcrest.internal.ArrayIterator;
 import org.junit.Test;
 
 
+import java.security.Key;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -11,7 +14,7 @@ import static org.junit.Assert.*;
 /**
  * An array based implementation of the Map61B class.
  */
-public class ArrayMap<K, V> implements Map61B<K, V> {
+public class ArrayMap<K, V> implements Map61B<K, V>, Iterable<K> {
     private K[] keys;
     private V[] values;
     int size;
@@ -22,7 +25,11 @@ public class ArrayMap<K, V> implements Map61B<K, V> {
         size = 0;
     }
 
-    public class KeyIterator{
+    public Iterator<K> iterator() {
+        return new KeyIterator();
+    }
+
+    public class KeyIterator implements Iterator<K> {
         int wizardPosition;
 
         public KeyIterator() {
