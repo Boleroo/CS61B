@@ -50,6 +50,9 @@ public class ArrayMap<K, V> implements Map61B<K, V> {
 
     public V get(K key) {
         int index = keyIndex(key);
+        if (index == -1) {
+            throw new IllegalArgumentException("The key provided " + key + "was not in the ArrayMap");
+        }
         return values[index];
     }
 
