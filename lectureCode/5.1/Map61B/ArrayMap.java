@@ -26,25 +26,26 @@ public class ArrayMap<K, V> implements Map61B<K, V>, Iterable<K> {
     }
 
     public Iterator<K> iterator() {
-        return new KeyIterator();
+        List<K> keylist = keys();
+        return keylist.iterator();
     }
 
-    public class KeyIterator implements Iterator<K> {
-        int wizardPosition;
-
-        public KeyIterator() {
-            wizardPosition = 0;
-        }
-        public boolean hasNext() {
-            return wizardPosition < size;
-        }
-
-        public K next() {
-            K returnVal = keys[wizardPosition];
-            wizardPosition++;
-            return returnVal;
-        }
-    }
+//    public class KeyIterator implements Iterator<K> {
+//        int wizardPosition;
+//
+//        public KeyIterator() {
+//            wizardPosition = 0;
+//        }
+//        public boolean hasNext() {
+//            return wizardPosition < size;
+//        }
+//
+//        public K next() {
+//            K returnVal = keys[wizardPosition];
+//            wizardPosition++;
+//            return returnVal;
+//        }
+//    }
 
     /** Returns the index of the given key if it exists, -1 otherwise. */
     private int keyIndex(K key) {
