@@ -22,6 +22,23 @@ public class ArrayMap<K, V> implements Map61B<K, V> {
         size = 0;
     }
 
+    public class KeyIterator{
+        int wizardPosition;
+
+        public KeyIterator() {
+            wizardPosition = 0;
+        }
+        public boolean hasNext() {
+            return wizardPosition < size;
+        }
+
+        public K next() {
+            K returnVal = keys[wizardPosition];
+            wizardPosition++;
+            return returnVal;
+        }
+    }
+
     /** Returns the index of the given key if it exists, -1 otherwise. */
     private int keyIndex(K key) {
         for (int i = 0; i < size; i++) {
