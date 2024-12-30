@@ -8,13 +8,14 @@ import java.security.Key;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Iterator;
 
 import static org.junit.Assert.*;
 
 /**
  * An array based implementation of the Map61B class.
  */
-public class ArrayMap<K, V> implements Map61B<K, V>, Iterable<K> {
+public class  ArrayMap<K, V> implements Map61B<K, V>, Iterable<K>{
     private K[] keys;
     private V[] values;
     int size;
@@ -26,26 +27,25 @@ public class ArrayMap<K, V> implements Map61B<K, V>, Iterable<K> {
     }
 
     public Iterator<K> iterator() {
-        List<K> keylist = keys();
-        return keylist.iterator();
+        return new KeyIterator();
     }
 
-//    public class KeyIterator implements Iterator<K> {
-//        int wizardPosition;
-//
-//        public KeyIterator() {
-//            wizardPosition = 0;
-//        }
-//        public boolean hasNext() {
-//            return wizardPosition < size;
-//        }
-//
-//        public K next() {
-//            K returnVal = keys[wizardPosition];
-//            wizardPosition++;
-//            return returnVal;
-//        }
-//    }
+    public class KeyIterator implements Iterator<K>{
+        private int wizardPosition;
+
+        public KeyIterator() {
+            wizardPosition = 0;
+        }
+
+        public boolean hasNext() {
+            return wizardPosition < size;
+        }
+        public K next() {
+            K res = keys[wizardPosition];
+            wizardPosition++;
+            return res;
+        }
+    }
 
     /** Returns the index of the given key if it exists, -1 otherwise. */
     private int keyIndex(K key) {

@@ -7,6 +7,11 @@ public class IterationDemo {
         am.put("syrups", 10);
         am.put("kingdom", 10);
 
+        ArrayMap.KeyIterator ami = am.new KeyIterator();
+        while (ami.hasNext()) {
+            System.out.println(ami.next());
+        }
+
         for (String s: am) {
             System.out.println(s);
         }
